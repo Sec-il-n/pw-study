@@ -15,8 +15,8 @@ test('サイドメニューを使った確実な遷移テスト', async ({ page 
   await homePage.clickWritingTests();
 
   // 3. URLが /docs/intro ではなく /docs/writing-tests になったか検証
-  // await expect(page).toHaveURL(/.*writing-tests/);//PASS
-  await expect(page).toHaveURL(/.*error-page/);//FAIL
+  await expect(page).toHaveURL(/.*writing-tests/);//PASS
+  // await expect(page).toHaveURL(/.*error-page/);//FAIL
   // 4. 見出しが "Writing tests" になっているか検証
   await expect(page.getByRole('heading', { name: 'Writing tests' })).toBeVisible();
 });
