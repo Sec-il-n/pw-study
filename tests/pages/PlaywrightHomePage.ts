@@ -17,6 +17,11 @@ export class PlaywrightHomePage extends BasePage {
     await this.page.goto('https://playwright.dev/');
   }
 
+  /** ホーム表示後のブラウザタイトル（ページに表記されるタイトル文言の根拠） */
+  async getDocumentTitle(): Promise<string> {
+    return this.page.title();
+  }
+
   // 「Get started」リンクをクリック
   async clickGetStarted(): Promise<void> {
     await this.getStartedLink.click();
