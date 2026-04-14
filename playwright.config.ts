@@ -1,3 +1,9 @@
+import dotenv from 'dotenv';
+import path from 'path';
+
+// .env ファイルを読み込む設定
+dotenv.config({ path: path.resolve(__dirname, '.env') });
+
 import { defineConfig, devices } from '@playwright/test';
 
 /**
