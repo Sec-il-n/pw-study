@@ -23,6 +23,9 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: npx playwright test
+      # 未使用↓　（GitHubSecret設定の練習用）
+      env:
+        ADMIN_SEARCH_KEY: ${{ secrets.ADMIN_SEARCH_KEY }}
     - uses: actions/upload-artifact@v4
       if: always()
       with:

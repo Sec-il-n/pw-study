@@ -14,7 +14,8 @@ export class PlaywrightHomePage extends BasePage {
 
   // トップページを開く
   async goto(): Promise<void> {
-    await this.page.goto('https://playwright.dev/');
+    // playwright.config.ts の baseURL を使ってトップへ遷移する
+    await this.page.goto('/');
   }
 
   /** ホーム表示後のブラウザタイトル（ページに表記されるタイトル文言の根拠） */

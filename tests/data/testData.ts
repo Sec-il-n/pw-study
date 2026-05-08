@@ -1,5 +1,5 @@
 export const testData = {
-  url: 'https://playwright.dev/',
+  url: '/',
   keywords: {
     locators: 'Locators',
     assertions: 'Assertions',

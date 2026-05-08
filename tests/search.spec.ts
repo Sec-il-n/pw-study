@@ -42,7 +42,12 @@ test.describe('playwright.dev ヘッダー DocSearch', () => {
     await docSearch.expectAtLeastOneSearchOption();
 
     await Promise.all([
-      page.waitForURL(/playwright\.dev\/docs\//),
+      // RegExp を組み立てるため hostname の '.' はエスケープしておく
+      page.waitForURL(
+        new RegExp(
+          `${new URL(process.env.BASE_URL ?? 'https://playwright.dev').hostname.replace(/\./g, '\\.')}/docs/`,
+        ),
+      ),
       docSearch.openFirstSearchOption(),
     ]);
   });

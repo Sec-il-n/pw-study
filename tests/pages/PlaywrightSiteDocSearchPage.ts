@@ -7,7 +7,8 @@ export class PlaywrightSiteDocSearchPage extends BasePage {
   }
 
   async goto(): Promise<void> {
-    await this.page.goto('https://playwright.dev/');
+    // playwright.config.ts の baseURL を使ってトップへ遷移する
+    await this.page.goto('/');
   }
 
   async openDocSearch(): Promise<void> {

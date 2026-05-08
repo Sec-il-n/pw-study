@@ -2,8 +2,9 @@ import { test, expect } from '@playwright/test';
 
 test('APIリクエストの送信と検証', async ({ request }) => {
   // 1. GETリクエストを送信（ダミーの投稿データを取得）
-  const response = await request.get('https://jsonplaceholder.typicode.com/posts/1');
-
+  // const response = await request.get('https://jsonplaceholder.typicode.com/posts/1');
+  const apiBase = process.env.API_BASE_URL ?? 'https://jsonplaceholder.typicode.com';
+  const response = await request.get(`${apiBase}/posts/1`);
   // 2. ステータスコードが 200 (成功) であることを確認
   expect(response.ok()).toBeTruthy();
   expect(response.status()).toBe(200);

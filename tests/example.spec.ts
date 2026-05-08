@@ -2,7 +2,8 @@ import { test, expect } from '@playwright/test';
 import { PlaywrightHomePage } from './pages/PlaywrightHomePage';
 
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await page.goto('/');//playwright.config.tsのbaseURLを使用
+
 });
 
 test('サイドメニューを使った確実な遷移テスト', async ({ page }) => {

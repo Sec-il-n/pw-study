@@ -4,7 +4,7 @@ import { SearchFlow } from './pages/SearchFlow';
 
 // 各テストの前に実行される共通処理
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  await page.goto('/');//playwright.config.tsのbaseURLを使用
 });
 
 test('検索フローのテスト', async ({ page }) => {
